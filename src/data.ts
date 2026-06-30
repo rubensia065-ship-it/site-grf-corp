@@ -1,8 +1,6 @@
 import { Project, Service, Testimonial } from "./types";
 import grfAvatar from "./assets/images/grf_corp_avatar_1782826683564.jpg";
 import fasoChic from "./assets/images/faso_chic_web_1782823055135.jpg";
-import kadiAssociates from "./assets/images/kadi_associates_web_1782823069048.jpg";
-import saharaLodge from "./assets/images/sahara_lodge_web_1782823081733.jpg";
 import zamaFood from "./assets/images/zama_food_web_1782823109158.jpg";
 
 export const CREATOR_PROFILE = {
@@ -27,26 +25,6 @@ export const PROJECTS: Project[] = [
     tags: ["React", "Tailwind", "E-commerce"],
     features: ["Paiement mobile money intégré (Orange, Moov)", "Catalogue fluide en 3D", "Panier ultra-rapide"],
     difficulty: "Premium"
-  },
-  {
-    id: "kadi-associates",
-    title: "Kadi & Associés",
-    category: "Site Corporate",
-    description: "Site internet institutionnel épuré et sérieux pour un cabinet d'avocats de premier plan basé à Ouaga 2000.",
-    image: kadiAssociates,
-    tags: ["Next.js", "SEO", "Multi-langues"],
-    features: ["Prise de rendez-vous en ligne", "Espace client sécurisé", "Indexation Google optimisée"],
-    difficulty: "Institutionnel"
-  },
-  {
-    id: "sahara-lodge",
-    title: "Sahara Lodge",
-    category: "Site de Réservation",
-    description: "Plateforme immersive de réservation haut de gamme pour un éco-lodge d'exception situé aux portes du Sahel.",
-    image: saharaLodge,
-    tags: ["React", "Framer Motion", "Booking"],
-    features: ["Galerie photo immersive", "Calendrier de réservation synchronisé", "Expérience client haut de gamme"],
-    difficulty: "Immersif"
   },
   {
     id: "zama-food",
@@ -114,13 +92,5 @@ export const TESTIMONIALS: Testimonial[] = [
     company: "Faso Chic Couture",
     avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=200&auto=format&fit=crop",
     content: "GRF Corporation a parfaitement compris notre vision. Notre nouveau site e-commerce a complètement transformé notre image de marque. Les clients adorent la fluidité sur mobile !"
-  },
-  {
-    id: "t2",
-    name: "Maître Aboubacar Sanon",
-    role: "Associé Principal",
-    company: "Sanon & Kadi Avocats",
-    avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=200&auto=format&fit=crop",
-    content: "Une rigueur rare. Le site web de notre cabinet inspire confiance et sérieux. Le service de prise de rendez-vous fonctionne à merveille depuis le premier jour."
   }
 ];

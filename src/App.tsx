@@ -56,11 +56,82 @@ export default function App() {
     }
   }, [darkMode]);
 
+  // Active section tracking state for smooth layoutId transitions
+  const [activeSection, setActiveSection] = useState<string>("hero");
+
+  useEffect(() => {
+    const sectionIds = ["hero", "projets", "services", "avantages", "faq", "contact"];
+    const observers = sectionIds.map((id) => {
+      const el = document.getElementById(id);
+      if (!el) return null;
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              setActiveSection(id);
+            }
+          });
+        },
+        {
+          rootMargin: "-25% 0px -55% 0px",
+        }
+      );
+      observer.observe(el);
+      return { observer, el };
+    });
+
+    return () => {
+      observers.forEach((obs) => {
+        if (obs) {
+          obs.observer.unobserve(obs.el);
+        }
+      });
+    };
+  }, []);
+
   return (
     <div className={`min-h-screen transition-colors duration-500 bg-apple-bg text-apple-black dark:bg-black dark:text-zinc-100 ${darkMode ? "dark" : ""}`}>
       
       {/* Global fixed background layer with light blue gradient (blue-200) at 15% opacity */}
       <div className="fixed inset-0 bg-gradient-to-tr from-blue-200/15 via-transparent to-blue-200/15 dark:from-blue-900/5 dark:to-blue-950/5 pointer-events-none z-0" />
+
+      {/* Floating Vertical Section Navigator with layoutId indicator for fluid scroll passages */}
+      <div className="hidden lg:flex fixed right-6 top-1/2 -translate-y-1/2 flex-col space-y-4 z-40 bg-white/40 dark:bg-zinc-950/40 backdrop-blur-md p-3 rounded-full border border-apple-border dark:border-zinc-900/60 shadow-xs">
+        {["hero", "projets", "services", "avantages", "faq", "contact"].map((id) => {
+          const isActive = activeSection === id;
+          const label = id === "hero" ? "Accueil" : id === "projets" ? "Projets" : id === "services" ? "Services" : id === "avantages" ? "Pourquoi Moi" : id === "faq" ? "FAQ" : "Contact";
+          return (
+            <a
+              key={id}
+              href={`#${id}`}
+              className="relative group p-1 flex items-center justify-center"
+              aria-label={`Aller à la section ${label}`}
+            >
+              {/* Tooltip */}
+              <span className="absolute right-8 px-2 py-1 rounded bg-apple-black text-white dark:bg-white dark:text-apple-black text-[10px] font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap shadow-xs">
+                {label}
+              </span>
+              
+              {/* Animated Ring using layoutId */}
+              {isActive && (
+                <motion.div
+                  layoutId="activeDotIndicator"
+                  className="absolute inset-0 rounded-full border border-sky-500/60 dark:border-sky-400/60 bg-sky-500/10 dark:bg-sky-400/5"
+                  transition={{ type: "spring", stiffness: 300, damping: 25 }}
+                />
+              )}
+              
+              {/* Core Dot */}
+              <div className={`w-2 h-2 rounded-full transition-all duration-300 z-10 ${
+                isActive 
+                  ? "bg-sky-500 dark:bg-sky-400 scale-120" 
+                  : "bg-apple-gray/40 dark:bg-zinc-700 group-hover:bg-apple-black dark:group-hover:bg-white"
+              }`} />
+            </a>
+          );
+        })}
+      </div>
 
       {/* Elegant Floated Light/Dark theme controller */}
       <div className="fixed bottom-6 left-6 z-50 flex items-center space-x-2">
@@ -79,7 +150,7 @@ export default function App() {
       </div>
 
       {/* Mounting Header Component */}
-      <Header whatsappNumber={whatsappNumber} />
+      <Header whatsappNumber={whatsappNumber} activeSection={activeSection} />
 
       {/* Hero Section */}
       <Hero whatsappNumber={whatsappNumber} />

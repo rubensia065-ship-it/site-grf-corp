@@ -58,7 +58,7 @@ export default function Hero({ whatsappNumber }: HeroProps) {
             initial={{ opacity: 0, y: 25 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.35, ease: "easeOut" }}
-            className="font-serif italic font-normal text-apple-accent inline-block"
+            className="font-serif italic font-normal text-sky-600 dark:text-sky-400 inline-block"
           >
             web premium
           </motion.span>

@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { Menu, X, MessageSquare, Phone } from "lucide-react";
+import { motion } from "motion/react";
 import { CREATOR_PROFILE } from "../data";
 import Logo from "./Logo";
 
 interface HeaderProps {
   whatsappNumber: string;
+  activeSection?: string;
 }
 
-export default function Header({ whatsappNumber }: HeaderProps) {
+export default function Header({ whatsappNumber, activeSection = "hero" }: HeaderProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [scrollProgress, setScrollProgress] = useState(0);
@@ -72,16 +74,32 @@ export default function Header({ whatsappNumber }: HeaderProps) {
           </a>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
-            {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                className="font-sans text-sm font-medium text-apple-gray hover:text-apple-black dark:text-zinc-400 dark:hover:text-white transition-colors duration-200"
-              >
-                {link.name}
-              </a>
-            ))}
+          <nav className="hidden md:flex items-center space-x-1.5 bg-gray-100/40 dark:bg-zinc-900/40 p-1.5 rounded-full border border-apple-border dark:border-zinc-800/40 backdrop-blur-xs">
+            {navLinks.map((link) => {
+              const targetId = link.href.slice(1);
+              const isActive = activeSection === targetId;
+              return (
+                <a
+                  key={link.name}
+                  href={link.href}
+                  className={`relative px-4 py-1.5 font-sans text-xs font-semibold tracking-wide transition-colors duration-300 rounded-full ${
+                    isActive
+                      ? "text-sky-950 dark:text-sky-100 font-bold"
+                      : "text-apple-gray hover:text-apple-black dark:text-zinc-400 dark:hover:text-white"
+                  }`}
+                >
+                  {/* Sliding background capsule using layoutId */}
+                  {isActive && (
+                    <motion.span
+                      layoutId="activeNavBackground"
+                      className="absolute inset-0 bg-sky-400/30 dark:bg-sky-400/15 border border-sky-400/30 dark:border-sky-400/10 rounded-full"
+                      transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                    />
+                  )}
+                  <span className="relative z-10">{link.name}</span>
+                </a>
+              );
+            })}
           </nav>
 
           {/* Call to Action Button */}
