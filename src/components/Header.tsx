@@ -43,6 +43,7 @@ export default function Header({ whatsappNumber }: HeaderProps) {
     { name: "Projets", href: "#projets" },
     { name: "Services", href: "#services" },
     { name: "Pourquoi Moi", href: "#avantages" },
+    { name: "FAQ", href: "#faq" },
     { name: "Contact", href: "#contact" },
   ];
 

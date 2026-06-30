@@ -59,6 +59,9 @@ export default function App() {
   return (
     <div className={`min-h-screen transition-colors duration-500 bg-apple-bg text-apple-black dark:bg-black dark:text-zinc-100 ${darkMode ? "dark" : ""}`}>
       
+      {/* Global fixed background layer with light blue gradient (blue-200) at 15% opacity */}
+      <div className="fixed inset-0 bg-gradient-to-tr from-blue-200/15 via-transparent to-blue-200/15 dark:from-blue-900/5 dark:to-blue-950/5 pointer-events-none z-0" />
+
       {/* Elegant Floated Light/Dark theme controller */}
       <div className="fixed bottom-6 left-6 z-50 flex items-center space-x-2">
         <button

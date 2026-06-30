@@ -16,14 +16,17 @@ export default function Hero({ whatsappNumber }: HeroProps) {
       {/* Soft champagne glow in the top-right corner - minimal & elegant */}
       <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-apple-accent/[0.04] dark:bg-apple-accent/[0.02] blur-[120px] rounded-full pointer-events-none" />
 
+      {/* Ambient light blue glowing sphere with decreased intensity */}
+      <div className="absolute top-1/4 left-1/4 w-[320px] h-[320px] bg-sky-400/15 dark:bg-sky-500/5 blur-[120px] rounded-full pointer-events-none" />
+
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
         
         {/* Location badge */}
         <motion.div
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="inline-block mb-8"
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="block mb-8"
         >
           <motion.div
             animate={{ y: [0, -3, 0] }}

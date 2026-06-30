@@ -62,8 +62,8 @@ export default function FAQSection() {
       answer: "Oui, tout à fait. Nous pouvons configurer des boutons de paiement direct ou l'intégration complète d'API de paiement locales pour que vos clients burkinabè puissent régler instantanément via leur téléphone."
     },
     {
-      question: "Proposez-vous un suivi ou une formation après la mise en ligne ?",
-      answer: "Chaque projet inclut une formation vidéo ou en présentiel (à Ouagadougou) d'une heure pour vous apprendre à modifier vos textes et images de manière autonome, ainsi qu'un support technique gratuit de 30 jours."
+      question: "Puis-je modifier le site moi-même après la livraison ?",
+      answer: "Pour garantir une sécurité maximale, une vitesse de chargement optimale et préserver la perfection esthétique du site (sans risque de dérégler le design), nous ne laissons pas les clients modifier le code ou les bases de données eux-mêmes. Notre équipe s'occupe de tout pour vous : avec notre Offre Avec Suivi ou nos contrats de maintenance réactifs, envoyez-nous vos textes ou photos par e-mail ou WhatsApp, et nous les mettons à jour sous 24h avec une précision pixel-perfect."
     }
   ];
 

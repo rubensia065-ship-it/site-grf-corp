@@ -1,11 +1,16 @@
 import { Project, Service, Testimonial } from "./types";
+import grfAvatar from "./assets/images/grf_corp_avatar_1782826683564.jpg";
+import fasoChic from "./assets/images/faso_chic_web_1782823055135.jpg";
+import kadiAssociates from "./assets/images/kadi_associates_web_1782823069048.jpg";
+import saharaLodge from "./assets/images/sahara_lodge_web_1782823081733.jpg";
+import zamaFood from "./assets/images/zama_food_web_1782823109158.jpg";
 
 export const CREATOR_PROFILE = {
   name: "GRF Corporation",
   title: "Créateur de sites internet pour entreprises",
   subtitle: "Basé à Ouagadougou, Burkina Faso",
   bio: "Nous concevons et développons des sites internet modernes, rapides et épurés. Notre objectif est de donner à votre activité burkinabè une présence digitale professionnelle, soignée et efficace pour attirer de nouveaux clients.",
-  avatar: "/src/assets/images/grf_corp_avatar_1782826683564.jpg",
+  avatar: grfAvatar,
   whatsappDefault: "22677080042",
   email: "rubensia065@gmail.com",
   experience: "5+ ans d'expérience",
@@ -18,7 +23,7 @@ export const PROJECTS: Project[] = [
     title: "Faso Chic",
     category: "Boutique E-commerce",
     description: "Une boutique en ligne haut de gamme pour du pagne tissé traditionnel 'Faso Dan Fani' réinventé pour le marché moderne.",
-    image: "/src/assets/images/faso_chic_web_1782823055135.jpg",
+    image: fasoChic,
     tags: ["React", "Tailwind", "E-commerce"],
     features: ["Paiement mobile money intégré (Orange, Moov)", "Catalogue fluide en 3D", "Panier ultra-rapide"],
     difficulty: "Premium"
@@ -28,7 +33,7 @@ export const PROJECTS: Project[] = [
     title: "Kadi & Associés",
     category: "Site Corporate",
     description: "Site internet institutionnel épuré et sérieux pour un cabinet d'avocats de premier plan basé à Ouaga 2000.",
-    image: "/src/assets/images/kadi_associates_web_1782823069048.jpg",
+    image: kadiAssociates,
     tags: ["Next.js", "SEO", "Multi-langues"],
     features: ["Prise de rendez-vous en ligne", "Espace client sécurisé", "Indexation Google optimisée"],
     difficulty: "Institutionnel"
@@ -38,7 +43,7 @@ export const PROJECTS: Project[] = [
     title: "Sahara Lodge",
     category: "Site de Réservation",
     description: "Plateforme immersive de réservation haut de gamme pour un éco-lodge d'exception situé aux portes du Sahel.",
-    image: "/src/assets/images/sahara_lodge_web_1782823081733.jpg",
+    image: saharaLodge,
     tags: ["React", "Framer Motion", "Booking"],
     features: ["Galerie photo immersive", "Calendrier de réservation synchronisé", "Expérience client haut de gamme"],
     difficulty: "Immersif"
@@ -48,7 +53,7 @@ export const PROJECTS: Project[] = [
     title: "Zama Food",
     category: "Landing Page & Web App",
     description: "Une interface web moderne et dynamique pour un service de livraison de mets gastronomiques locaux et sains à Ouagadougou.",
-    image: "/src/assets/images/zama_food_web_1782823109158.jpg",
+    image: zamaFood,
     tags: ["Tailwind", "Responsive", "Interactive"],
     features: ["Menu interactif dynamique", "Géolocalisation des livreurs", "Suivi de commande par SMS"],
     difficulty: "Moderne"
