@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400..700;1,400..700&family=Outfit:wght@500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-apple-black: #111115;
+  --color-apple-gray: #6E6E73;
+  --color-apple-bg: #F5F5F7;
+  --color-apple-border: #E5E5EA;
+  --color-apple-accent: #C5A059;
+  
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+  --font-serif: "Playfair Display", Georgia, serif;
+  --font-display: "Space Grotesk", sans-serif;
+  --font-logo: "Outfit", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px; /* To prevent headers from overlapping anchors */
+  -webkit-text-size-adjust: 100%; /* Prevent automatic text size adjustments on iOS and HiOS */
+}
+
+body {
+  background-color: var(--color-apple-bg);
+  color: var(--color-apple-gray);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+  
+  /* Enable native momentum scroll on mobile */
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Eliminate tap delay on iOS/Android/HiOS buttons */
+a, button, select, input, textarea {
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent; /* Remove the grey highlight box on tap */
+}
+
+/* Custom Minimal Scrollbar for computers */
+@media (min-width: 1024px) {
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #F5F5F7;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #C7C7CC;
+    border-radius: 9999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #8E8E93;
+  }
+}
+
+/* Hardware accelerated transition class for extreme fluidity */
+.fluid-gpu {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+  will-change: transform, opacity;
+}
+
+

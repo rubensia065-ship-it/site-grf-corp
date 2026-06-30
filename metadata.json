@@ -1,0 +1,6 @@
+{
+  "name": "Portfolio Créateur Web Premium",
+  "description": "Site vitrine portfolio haut de gamme pour un créateur de sites web freelance à Ouagadougou, Burkina Faso, inspiré par le design épuré d'Apple.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
